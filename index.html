@@ -1,0 +1,144 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>Dream Vacation in Hawaii</title>
+
+    <body onload="rotate()">
+      <!-- 1), 2) 3) Find new images, Create Scrolling Banner with new images -->
+      <img src="dv1.jpg" align="middle" width="80%" height="20%" name="adBanner">
+      <script type="text/javascript" language="javascript">
+          adImages = new Array("dv1.jpg","dv2.jpg","dv3.jpg","dv4.jpg","dv5.jpg","dv6.jpg","dv7.jpg")
+          thisAd = 0
+          imgCt = adImages.length
+          function rotate(){
+            if(document.images){
+              thisAd++
+              if (thisAd == imgCt){
+                thisAd = 0
+              }
+              document.adBanner.src = adImages[thisAd]
+              setTimeout("rotate()", 40 * 100)
+            }
+          }
+    </script>
+    <hr/>
+
+  <!-- 5) Add the date and time to the top of every page.-->
+    <script type="text/javascript" language="javascript">
+      dayName = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+      monName = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+      now = new Date();
+      document.write('<h1 style="background-color:Blue;" "text-align: center;">')
+      document.write("Today is "+ dayName[now.getDay()] + ", " + monName[now.getMonth()] +" "+ now.getDate())
+      document.write('</h1>')
+    </script>
+
+    <center>
+    <table border="10" cellpadding="5" cellspacing="5">
+        <a name="top"></a>
+        <tr>
+        <td><a href="Page2.html">Places to Visit</a></td>
+        <td><a href="Page3.html">Things to Eat</a></td>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  <hr/>
+
+  <!-- 4) Add rollover images to at least 2 images per page. -->
+  <script>
+     function mouseRollover( imageId, imageSrc ) {
+        let image = document.getElementById( imageId );
+        image.src = imageSrc;
+     }
+  </script>
+    <table bgcolor="MidnightBlue" border="5">
+      <tr>
+        <td align="center"><h1>What is Hawaii?</h1>
+          <img src="moving.jpg" width = "90%" height ="90%" hspace="10" vspace="10"
+            OnMouseOver="mouseRollover('demo1','Land.jpg')"
+            OnMouseOut="mouseRollover('demo1','moving.jpg')"
+           id="demo1" alt="demo Image"></td>
+           <td><p style="font-size:20px">Hawaii is one of 50 states of the United States of America. It is the eighth-smallest in land area and the 11th-least populous, but with 1.4 million residents ranks 13th in population density.
+             Hawaii is known for its active volcanoes and wildlife refuges with its natural beauty as top reason to visit.
+             Many people love Hawaii but it can be very expensive. With enough money and time to spend, people go to hawaii to enjoy a relaxing time.</p>
+           </td></tr>
+           <td align="center"><h1>Islands of Hawaii</h1>
+             <img src="Map.jpg" width = "90%" height ="90%" hspace="10" vspace="10"
+               OnMouseOver="mouseRollover('demo2','HSunset.jpg')"
+               OnMouseOut="mouseRollover('demo2','Map.jpg')"
+              id="demo2" alt="demo Image"></td>
+              <td><p style="font-size:20px">Hawaii is a state in the United States that has many islands, also known as the Islands of Paradise.
+                Every island in Hawaii has its own uniqueness to draw tourists. It is also best to go in the summer time with nice heat and sunny days to enjoy the waves and beaches.
+              </td>
+
+</table>
+  <!-- 6) Add a button that asks the user a questions that has to do with the theme of the website and have them type in the answer. (Like you did with name).-->
+            <p id="capital">
+              <input type="button" value ="What is the Capital of Hawaii?" onclick="capital()" >
+            </p>
+            <p id="islands">
+              <input type="button" value ="How many islands are there in Hawaii?" onclick="islands()" >
+            </p>
+
+            <!-- 7) Add buttons to provide information on each page (minimum of 2 on each page) -->
+            <p id="hawaiiFacts">
+              <button onclick="hawaiiFacts()">Click for Hawaii Fun Fact!</button>
+            </p>
+            <p id="hawaiiFact1">
+              <button onclick="hawaiiFact1()">Click to learn more about Hawaii!</button>
+            </p>
+
+
+          <script type="text/javascript" language="javascript">
+          function hawaiiFact1()
+          {
+            alert("One of the most universally exchanged gifts in Hawaii is leis. These can be fresh flower leis, ribbon leis, feather leis, or kukui nut leis.");
+          }
+
+          function capital()
+          {
+            //Ask's the person's name//
+            let name = prompt("What is the capital of Hawaii?","Enter name here");
+            //Welcomes the person//
+            alert("If you said Honolulu, then you are 100% correct!");
+          }
+
+          function hawaiiFacts()
+          {
+              alert("Hawaii is the 50th state of the United States because it is a seperated island from North America.")
+          }
+
+          function islands()
+          {
+              let name = prompt("How many islands are there in Hawaii?","Enter number here");
+              alert("Hawaii has eight major islands. They are: \n1. The Big Island\n2. Kahoolawe - The Target Isle\n3. Kauai— The Garden Isle\n4. Lanai—The Pineapple Isle\n5. Maui—The Valley Isle\n6. Molokai—The Friendly Isle\n7. Niihau—The Forbidden Isle\n8. Oahu—The Gathering Place ")
+          }
+          function saySomething(message)
+          {
+            alert(message)
+          }
+
+    </script>
+  <!-- 8) Add images to each page that allows the user to manually go forward and back through the images (minimum of 3). -->
+        <p align="center">
+
+          <img src="culture.jpg" name="myPicture" width="50%" height="50%" alt="Slideshow"/></p>
+          <script>
+          myPix = new Array("culture.jpg","islands.jpg","birds.jpg", "culture1.jpg", "culture3.jpg")
+          thisPic=0
+          imgCt = myPix.length - 1
+          function processPrevious() {
+            if (document.images && thisPic > 0){
+              thisPic--
+              document.myPicture.src=myPix[thisPic]
+            }
+          }
+            function processNext() {
+              if (document.images && thisPic < imgCt) {
+                thisPic++
+                document.myPicture.src=myPix[thisPic]
+            }
+          }
+          </script>
+          <h1 align="center"><a href="javascript:processPrevious()">Back</a>&nbsp;&nbsp;<a href="javascript:processNext()">Next&gt;&gt</a></h1></p>

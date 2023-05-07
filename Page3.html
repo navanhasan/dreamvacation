@@ -1,0 +1,113 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <body>
+    <link rel="stylesheet" type="text/css" href="style1" title="Style 1" />
+    <hr/>
+    <center>
+      <img src="FTE.jpg" alt="banner" width=100% align="middle">
+      <script type="text/javascript" language="javascript">
+        dayName = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+        monName = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+        now = new Date();
+        document.write('<h1 style="background-color:Blue;" "text-align: center;">')
+        document.write("Today is "+ dayName[now.getDay()] + ", " + monName[now.getMonth()] +" "+ now.getDate())
+        document.write('</h1>')
+      </script>
+      <script type="text/javascript" language="javascript">
+           function mouseRollover( imageId, imageSrc ) {
+              let image = document.getElementById( imageId );
+              image.src = imageSrc;
+           }
+        </script>
+        <img src="dole.jpg"  width = "40%" height ="40%" hspace="10" vspace="10"
+          OnMouseOver="mouseRollover('dole1','dole1.jpg')"
+          OnMouseOut="mouseRollover('dole1','dole.jpg')" id="dole1" alt="dole Image"/>
+          <img src="food4.jpg"  width = "35%" height ="35%" hspace="10" vspace="10"
+            OnMouseOver="mouseRollover('food','fruits1.jpg')"
+            OnMouseOut="mouseRollover('food','food4.jpg')" id="food" alt="dole Image"/>
+
+      <p id="food">
+        <input type="button" value ="Popular food in Hawaii" onclick="food()" >
+      </p>
+      <p id="poke">
+        <input type="button" onclick="poke()" value="Hawaii Poke" /><br />
+      </p>
+      <p id="fruits">
+        <input type="button" onclick="fruits()" value="What is your favorite fruit?" /><br />
+      </p>
+      <p id="plantations">
+        <input type="button" onclick="plantations()" value="Have you been to the Dole Plantation in Hawaii?" /><br />
+      </p>
+      <script type="text/javascript" language="javascript">
+        function fruits() {
+          let name = prompt("What is your favorite fruit?","Enter fruit name");
+          alert("That's great! There are many delicious fruits to eat in Hawaii such as:\n1. Dragon Fruit\n2. Lychee\n3. Papaya\n4. Coconut\n5. Pineapple\6. Mangos");
+        }
+
+        function poke()  {
+            alert("Poke is rooted in the days when native Hawaiian fishermen would slice up smaller reef fish and serve them raw, seasoned with whatever was on hand—usually condiments such as sea salt, candlenuts, seaweed and limu, a kind of brown algae. Poke is traditionally made with ahi tuna or octopus.");      }
+
+        function food()  {
+            alert("There are many amazing cuisine to Hawaii. While you are visting, do not miss:\n1. Pineapple Smoothie\n2. Poke\n3. Saimin\n4. Chicken and Rice\n5. Sushi\n6. Poi");
+        }
+        function saySomething(message) {
+          alert(message)
+        }
+
+        function plantations(){
+            let name = prompt("Have you been to the Dole Plantation in Hawaii?","Enter Yes or No");
+            alert("Do not miss the Pineapple split ice cream while at Dole Plantation in Hawaii. \nThere are several other plantations. Sugar cane was introduced to Hawaii by its first inhabitants. Sugar quickly turned into a big business and generated rapid population growth in the islands. This caused an increase in platations. ");
+        }
+      </script>
+      <hr/>
+      <p align="center">
+
+        <img src="luau.jpg" name="myPicture" width="50%" height="50%" alt="Slideshow"/></p>
+        <script>
+        myPix = new Array("luau.jpg","dole.jpg","poke.jpg","food4.jpg","fruits1.jpg", "fruits4.jpg","fruits.jpg","food2.jpg","food3.jpg","food1.jpg")
+        thisPic=0
+        imgCt = myPix.length - 1
+        function processPrevious() {
+          if (document.images && thisPic > 0){
+            thisPic--
+            document.myPicture.src=myPix[thisPic]
+          }
+        }
+          function processNext() {
+            if (document.images && thisPic < imgCt) {
+              thisPic++
+              document.myPicture.src=myPix[thisPic]
+          }
+        }
+        </script>
+        <h1 align="center"><a href="javascript:processPrevious()">Back</a>&nbsp;&nbsp;<a href="javascript:processNext()">Next&gt;&gt</a></h1></p>
+
+
+    <center><table border="10" cellpadding="5" cellspacing="5">
+      <a name="top"></a>
+      <tr>
+      <td><a href="index.html">What is Hawaii?</a></td>
+      <td><a href="Page2.html">Places to Go</a></td>
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <hr/>
+
+      <div class="PTA">
+      </div>
+
+      <div class="textSection">
+      <h3>Things to Eat while in Hawaii!</h3>
+        <li>Sushi</li>
+        <li>Pineapple Smoothie</li>
+        <li>Poke</li>
+        <li>Saimin</li>
+        <li>Chicken and Rice</li>
+      <a href="#top"><h1 style="color:blue;">Back to Top</h1></a>
+      </div>
+
+      </table>
+    </center>
+    </body>

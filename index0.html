@@ -1,0 +1,240 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>Dream Vacation</title>
+    <body onload="rotate()">
+      <script type="text/javascript" language="javascript">
+        dayName = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+        monName = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+        now = new Date();
+        document.write('<h1 style="background-color:Blue;" "text-align: center;">')
+        document.write("Today is "+ dayName[now.getDay()] + ", " + monName[now.getMonth()] +" "+ now.getDate())
+        document.write('</h1>')
+      </script>
+    <!--  <img src="Presentation2.jpg" width="400" height="75" name="adBanner"-->
+    <style>
+    * {box-sizing: border-box}
+    body {font-family: Verdana, sans-serif; margin:0}
+    .mySlides {display: none}
+    img {vertical-align: middle;}
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+    </style>
+
+    <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="banner1.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="dv2.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="dv3.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+    <!--  <p align="center"><img src="banner1.jpg" name="myPicture" width="100%" height="50%" alt="Slideshow"/></p>-->
+      <h1 align="center">
+          <a href="javascript:processPrevious()">Back</a>&nbsp;&nbsp;<a href="javascript:processNext()">Next&gt;&gt</a>
+      </h1>
+      <link rel="stylesheet" type="text/css" href="style1" title="Style 1" />
+
+
+      
+      myPix = new Array("dv1.jpg","dv2.jpg","dv3.jpg")
+      thisPic=0
+      imgCt = myPix.length - 1
+      function processPrevious() {
+        if (document.images && thisPic > 0){
+          thisPic--
+          document.myPicture.src=myPix[thisPic]
+        }
+      }
+        function processNext() {
+          if (document.images && thisPic < imgCt) {
+            thisPic++
+            document.myPicture.src=myPix[thisPic]
+        }
+      }
+      </script>
+        <script type="text/javascript" language="javascript">
+        adImages = new Array("HDV.jpg","EZ.jpg","HEV.jpg")
+        thisAd = 0
+        imgCt = adImages.length
+        function rotate(){
+          if(document.images){
+            thisAd++
+            if (thisAd == imgCt){
+              thisAd = 0
+            }
+            document.adBanner.src=adImages[thisAd]
+            setTimeout("rotate()", 3 * 100)
+          }
+        }
+      </script>
+
+      <h1 style="background-color:Blue;">Navigation</h1>
+    <hr/>
+      <center><table border="10" cellpadding="5" cellspacing="5">
+        <a name="top"></a>
+        <tr>
+        <td><a href="Page2.html">Places To Go</a></td>
+        <td><a href="Page3.html">Things to Eat</a></td>
+
+  </style>
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+  </head>
+  <hr/>
+  <center>
+    <table bgcolor="Green" border="10">
+      <tr>
+        <td><h1>What is Hawaii?</h1>
+          <img src="HawaiiPic.jpg" alt="Pic" width="350" height="350" alt="Pic" hspace="10" vspace="10"/>
+          </a></td>
+            <td><p style="font-size:30px">Hawaii is a state in the United States that has many islands. It is also the best time to go in the summer time with the nice heat and sunny days with waves and beaches. Many people love Hawaii and if they earn enough money and time to spend, people will go to hawaii and have a relaxing time.</p>
+            </td>
+      </tr>
+    </table>
+  </center>
+
+
+    <div class="SpongeBobBeach">
+    </div>
+    <div class="SCC">
+    </div>
